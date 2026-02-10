@@ -54,9 +54,7 @@ This project demonstrates **MLOps principles**: rigorous data engineering, autom
 
 The pipeline follows a modular 4-stage architecture, designed for scalability and reproducibility.
 
-<p align="center">
-  <img src="assets/architecture.png" width="800" title="System Architecture">
-</p>
+![System Architecture](assets/architecture.png)
 
 | Stage | Component | Description |
 | :--- | :--- | :--- |
