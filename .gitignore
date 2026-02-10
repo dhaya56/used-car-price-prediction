@@ -1,0 +1,14 @@
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Data backups (keep only required CSVs)
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
