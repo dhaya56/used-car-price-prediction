@@ -1,9 +1,9 @@
 # Used Car Price Prediction – End-to-End ML Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-green?logo=xgboost)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-orange?logo=scikit-learn)
-![Pandas](https://img.shields.io/badge/Pandas-Data_Engineering-150458?logo=pandas)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data_Engineering-150458?logo=pandas)](https://pandas.pydata.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-orange?logo=scikit-learn)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-green?logo=xgboost)](https://xgboost.readthedocs.io/)
 
 A production-ready machine learning pipeline designed to predict used car prices with high precision. By harmonizing data from 9 separate sources and optimizing an **XGBoost Regressor**, this system achieves a **9.4% reduction in prediction error** compared to baseline models.
 
@@ -89,25 +89,25 @@ We conducted a two-stage evaluation: a baseline comparison of 6 algorithms follo
 | Model | Test $R^2$ | RMSE (£) | Status |
 | :--- | :--- | :--- | :--- |
 | **XGBoost** | **0.9485** | **£1,893.23** | **Selected** |
-| **CatBoost** | 0.9481 | £1,901.60 | Runner-up |
-| **LightGBM** | 0.9476 | £1,911.09 | Strong |
-| **Random Forest** | 0.9415 | £2,019.26 | Overfit |
-| **Linear Models** | ~0.8150 | ~£3,580.00 | High Bias |
+| **CatBoost** | 0.9488 | £1,895.90 | Runner-up |
+| **LightGBM** | 0.9363 | £2,101.76 | Strong |
+| **AdaBoost** | 0.6953 | £5,160.39 | Overfit |
+| **Linear Models** | ~0.8224 | ~£3,519.33 | High Bias |
 
 ### 2. Final Optimization Results
 After hyperparameter tuning (RandomizedSearchCV), the model achieved:
 
 | Metric | Baseline | **Final Tuned Model** | Improvement |
 | :--- | :--- | :--- | :--- |
-| **RMSE (£)** | £1,893.23 | **£1,715.30** | **📉 9.4% Error Reduction** |
-| **$R^2$ Score** | 0.9485 | **0.9555** | **📈 Higher Accuracy** |
+| **RMSE (£)** | £1,893.23 | **£1,715.30** | **9.4% Error Reduction** |
+| **$R^2$ Score** | 0.9485 | **0.9555** | **Higher Accuracy** |
 
 ---
 
 ## Tech Stack
 
 * **Language:** Python 3.8+
-* **Modeling:** XGBoost, CatBoost, LightGBM, Scikit-Learn
+* **Modeling:** XGBoost, CatBoost, LightGBM, AdaBoost, Linear models, Scikit-Learn
 * **Data Manipulation:** Pandas, NumPy
 * **Visualization:** Matplotlib, Seaborn
 * **Development:** Jupyter Notebook
