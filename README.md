@@ -15,11 +15,12 @@ This project demonstrates **MLOps principles**: rigorous data engineering, autom
 - [Project Overview](#project-overview)
 - [Key Features](#key-features)
 - [System Architecture](#system-architecture)
-- [Tech Stack](#tech-stack)
 - [Data Engineering Pipeline](#data-engineering-pipeline)
 - [Model Performance](#model-performance)
-- [Installation & Usage](#setup--installation)
+- [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
+- [Sample Screenshots](#sample-screenshots)
+- [Installation & Usage](#setup--installation)
 
 ---
 
@@ -53,7 +54,9 @@ This project demonstrates **MLOps principles**: rigorous data engineering, autom
 
 The pipeline follows a modular 4-stage architecture, designed for scalability and reproducibility.
 
-![System Architecture](assets/architecture.png)
+<p align="center">
+  <img src="assets/architecture.png" width="800" title="System Architecture">
+</p>
 
 | Stage | Component | Description |
 | :--- | :--- | :--- |
@@ -61,16 +64,6 @@ The pipeline follows a modular 4-stage architecture, designed for scalability an
 | **2** | **Processing** | Handles missing values, removes outliers, and standardizes features. |
 | **3** | **Modeling** | Trains ensemble models; selects XGBoost via Cross-Validation. |
 | **4** | **Inference** | Predicts price and converts output to user's currency. |
-
----
-
-## Tech Stack
-
-* **Language:** Python 3.8+
-* **Modeling:** XGBoost, CatBoost, LightGBM, Scikit-Learn
-* **Data Manipulation:** Pandas, NumPy
-* **Visualization:** Matplotlib, Seaborn
-* **Development:** Jupyter Notebook
 
 ---
 
@@ -111,7 +104,35 @@ After hyperparameter tuning (RandomizedSearchCV), the model achieved:
 
 ---
 
-## Visualizations
+## Tech Stack
+
+* **Language:** Python 3.8+
+* **Modeling:** XGBoost, CatBoost, LightGBM, Scikit-Learn
+* **Data Manipulation:** Pandas, NumPy
+* **Visualization:** Matplotlib, Seaborn
+* **Development:** Jupyter Notebook
+
+---
+
+## Project Structure
+```text
+.
+├── assets/                              # Output plots and Diagrams  
+├── dataset/
+│   ├── used_cars/              
+│   │   ├── audi.csv, bmw.csv...         # Raw CSV files (audi.csv, bmw.csv...)
+│       └── preprocessed_used_cars.csv
+├── used_car_prediction.ipynb            # Main Pipeline (ETL + Modeling)
+└── README.md
+```
+
+---
+
+## Sample Screenshots
+
+### Correlation Matrix
+*Heatmap displaying the relationships between numerical features. It helps identify highly correlated variables (multicollinearity) and their impact on the target price.*
+![Correlation Matrix](assets/correlation_matrix.png)
 
 ### Actual vs. Predicted
 *Visual proof of model accuracy. Points along the red line represent perfect predictions.*
@@ -120,6 +141,10 @@ After hyperparameter tuning (RandomizedSearchCV), the model achieved:
 ### Residual Analysis
 *Random scatter around zero indicates the model has captured all systematic patterns.*
 ![Residual Plot](assets/residual_plot.png)
+
+### Learning Curves
+*Demonstrates model convergence. The tight gap between the Training score (Red) and Cross-Validation score (Green) is the definitive proof that the model is **not overfitting**.*
+![Learning Curves](assets/learning_curves.png)
 
 ---
 
@@ -163,14 +188,5 @@ final_price = predict_price_inr(new_car_input)
 print(f"Estimated Market Value: ₹{final_price:,.2f}")
 ```
 
-## Project Structure
-```text
-.
-├── assets/                              # Output plots and Diagrams  
-├── dataset/
-│   ├── used_cars/              
-│   │   ├── audi.csv, bmw.csv...         # Raw CSV files (audi.csv, bmw.csv...)
-│       └── preprocessed_used_cars.csv
-├── used_car_prediction.ipynb            # Main Pipeline (ETL + Modeling)
-└── README.md
-```                       
+---
+
